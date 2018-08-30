@@ -1,0 +1,97 @@
+
+Week1
+Suffix Trees
+How would you search for a longest repeat in a string in LINEAR time? In 1973, Peter Weiner came up with a surprising solution that was based on suffix trees, the key data structure in pattern matching. Computer scientists were so impressed with his algorithm that they called it the Algorithm of the Year. In this lesson, we will explore some key ideas for pattern matching that will - through a series of trials and errors - bring us to suffix trees.
+
+Learning Objectives
+
+Develop a program to build a trie out of a list of strings
+Develop a program to search for multiple patterns in a string using trie
+Develop a program to build a suffix tree of a string
+Apply suffix tree to find the longest non-shared substring of two strings
+
+Please see this link(http://bioinformaticsalgorithms.com/faqs/bwt.html), section "Coursera week 1" for some of the frequently asked questions and answers about this week's material in the Bioinformatics Specialization.
+
+See Chapter 9: How Do We Locate Disease-Causing Mutations (Combinatorial Pattern Matching) in [CP15] Phillip Compeau, Pavel Pevzner. Bioinformatics Algorithms: An Active Learning Approach, 2nd Ed. Vol. 1. Active Learning Publishers. 2015.
+
+Also see the course "Finding Mutations in DNA and Proteins" of the Bioinformatics Specialization.
+
+If you want to learn how to assemble genomes, also see Chapter 3: How Do We
+Assemble Genomes (Graph Algorithms) in [CP15] Phillip Compeau, Pavel Pevzner.
+Bioinformatics Algorithms: An Active Learning Approach, 2nd Ed. Vol. 1. Active Learning Publishers. 2015.
+
+WEEK2
+
+Burrows-Wheeler Transform and Suffix Arrays
+
+Although EXACT pattern matching with suffix trees is fast, it is not clear how to use suffix trees for APPROXIMATE pattern matching. In 1994, Michael Burrows and David Wheeler invented an ingenious algorithm for text compression that is now known as Burrows-Wheeler Transform. They knew nothing about genomics, and they could not have imagined that 15 years later their algorithm will become the workhorse of biologists searching for genomic mutations. But what text compression has to do with pattern matching??? In this lesson you will learn that the fate of an algorithm is often hard to predict ¨C its applications may appear in a field that has nothing to do with the original plan of its inventors.
+
+Learning Objectives:
+
+Explain how Burrows-Wheeler transform allows to reduce the memory needed to store genome and search patterns in genome efficiently
+Develop a program to compute Burrows-Wheeler Transform of a string
+Develop a program to invert Burrows-Wheeler Transform of a string
+Develop a program to search in a string given as its Burrows-Wheeler Transform
+Develop a program to build a suffix array of a string
+Explain how suffix array can be used to search for patterns in a string given as its Burrows-Wheeler Transform
+Explain how partial suffix array can be used to reduce memory needed for suffix array and still be able to search for patterns in a string
+
+You may find it useful before implementing some of the problems in the Programming Assignment to look closer at the pseudocode for the algorithms discussed in the lectures.
+
+Here is the pseudocode for BWMatching algorithm from the lecture:
+
+bwmatching.pdf
+Here is the pseudocode for BetterBWMatching from the lecture:
+
+better_bwmatching.pdf
+Alternatively, you can see this interactive text which has more details about using BWT for pattern matching (this link leads to Finding Mutations in DNA and Proteins course of the Bioinformatics specializtion). Note that you don't need to pass the code challenge in the end of the interactive text as it won't affect your Coursera grade for this course: we have prepared a separate Programming Assignment for you.
+
+You may find it useful before implementing some of the problems in the Programming Assignment to look closer at the pseudocode for the algorithms discussed in the lectures.
+
+Here is the pseudocode for pattern matching with suffix array:
+
+suffix_array_matching.pdf
+
+References
+
+See Chapter 9: How Do We Locate Disease-Causing Mutations (Combinatorial Pattern Matching) in [CP15] Phillip Compeau, Pavel Pevzner. Bioinformatics Algorithms: An Active Learning Approach, 2nd Ed. Vol. 1. Active Learning Publishers. 2015.
+
+Also see the course "Finding Mutations in DNA and Proteins" of the Bioinformatics Specialization.
+
+If you want to learn how to assemble genomes, also see Chapter 3: How Do We Assemble Genomes (Graph Algorithms) in [CP15] Phillip Compeau, Pavel Pevzner. Bioinformatics Algorithms: An Active Learning Approach, 2nd Ed. Vol. 1. Active Learning Publishers. 2015.
+
+WEEK3
+
+Knuth¨CMorris¨CPratt Algorithm
+
+Congratulations, you have now learned the key pattern matching concepts: tries, suffix trees, suffix arrays and even the Burrows-Wheeler transform! However, some of the results Pavel mentioned remain mysterious: e.g., how can we perform exact pattern matching in O(|Text|) time rather than in O(|Text|*|Pattern|) time as in the na?ve brute force algorithm? How can it be that matching a 1000-nucleotide pattern against the human genome is nearly as fast as matching a 3-nucleotide pattern??? Also, even though Pavel showed how to quickly construct the suffix array given the suffix tree, he has not revealed the magic behind the fast algorithms for the suffix tree construction!In this module, Mi§ãhael will address some algorithmic challenges that Pavel tried to hide from you :) such as the Knuth-Morris-Pratt algorithm for exact pattern matching and more efficient algorithms for suffix tree and suffix array construction.
+
+Learning Objectives:
+Explain what is a prefix function
+Explain how to compute prefix function on each step of Knuth-Morris-Pratt algorithm
+Apply amortized analysis to explain why prefix function is computed in linear time in Knuth-Morris-Pratt algorithm
+Develop a program to find pattern in text using Knuth-Morris-Pratt algorithm (first problem of the last programming assignment which is in the next week)
+
+
+See chapters 1, 2.3, 3.3 in [G97] Dan Gusfield. Algorithms on Strings, Trees and Sequences: Computer Science and Computational Biology (1st Edition). Cambridge University Press. 1997.
+
+See this visualization/tracing of the Knuth-Morris-Pratt algorithm(http://algo-visualizer.jasonpark.me/#path=string/knuth_morris_pratt/substring_search).
+
+WEEK4
+
+Constructing Suffix Arrays and Suffix Trees
+
+In this module we continue studying algorithmic challenges of the string algorithms. You will learn an O(n log n) algorithm for suffix array construction and a linear time algorithm for construction of suffix tree from a suffix array. You will also implement these algorithms and the Knuth-Morris-Pratt algorithm in the last Programming Assignment in this course.
+
+Learning Objectives
+
+Develop a program to build suffix array of a long string efficiently
+Apply suffix array to find patterns in long text efficiently
+Develop a program to build suffix tree of a long string efficiently given its suffix array and LCP array
+
+See chapter 4 in [CHL01] Maxime Crochemore, Cristophe Hancart, Thierry Lecroq. Algorithms on Strings, Cambridge University Press, 2001.
+
+Review the lecture on the Counting Sort. Also see this answer (https://softwareengineering.stackexchange.com/questions/247440/what-does-it-mean-for-a-sorting-algorithm-to-be-stable) for an example of difference between stable sorting and a non-stable sorting algorithms. Counting Sort is a stable sort.
+
+
+[CP15] Phillip Compeau, Pavel Pevzner. Bioinformatics Algorithms: An Active Learning Approach, 2nd Ed. Vol. 1. Active Learning Publishers. 2015.
