@@ -1,0 +1,4 @@
+Assignment: Maximum pairwise product
+Problem: Given a sequence of non-negative integers 0 <= a_0,....,a_{n-1} <= 10^5, find the maximum pairwise product (max a_i*a_j)
+Input format: The first line of the input contains number 2 <= n <= 2*10^5. The next line contains n non-negative integers 0 <= a_0,..., a_{n-1} <= 10^5
+Output format: Output a single number - the maximum pairwise product.
